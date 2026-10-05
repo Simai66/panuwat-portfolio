@@ -457,6 +457,40 @@ img {
   display: flex;
   gap: 8px;
   margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* ชื่อสาขาภาษาอังกฤษ + ระยะห่างย่อหน้า */
+.edu-en {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.mt {
+  margin-top: 12px;
+}
+
+/* ---------- รายการความสามารถ (checklist 2 คอลัมน์) ---------- */
+.cap-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 24px;
+}
+
+.cap-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 15px;
+}
+
+.cap-list svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--green);
+  margin-top: 3px;
 }
 
 /* ---------- 6. Skills / Projects / Contact ---------- */
@@ -480,10 +514,56 @@ img {
   flex-shrink: 0;
 }
 
-.projects-grid {
+/* ---------- โปรเจกต์แบบแถวยาว (อ่านรายละเอียดง่าย) ---------- */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 18px;
+  grid-template-columns: 200px 1fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.project-row .project-thumb {
+  height: 100%;
+  min-height: 190px;
+  margin-bottom: 0;
+}
+
+.project-body h3 {
+  font-size: 21px;
+  margin: 10px 0 2px;
+}
+
+.project-sub {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.project-body > p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.project-body h4 {
+  font-size: 15px;
+  margin: 16px 0 8px;
+}
+
+.resp-list {
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 14.5px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 6px;
 }
 
 .project-card {
@@ -556,9 +636,30 @@ img {
   border-color: var(--green);
 }
 
-/* เป้าหมาย */
-.goal-card p {
-  font-size: 17px;
+/* ---------- แนวทาง + เป้าหมาย (2 การ์ดคู่กัน) ---------- */
+.goal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.goal-grid h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.goal-grid h3 svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.goal-grid p {
+  font-size: 15.5px;
+  color: var(--text);
 }
 
 /* ติดต่อ */
@@ -697,5 +798,19 @@ img {
 
   .section {
     padding: 50px 0;
+  }
+
+  /* ส่วนใหม่บนมือถือ: เรียง 1 คอลัมน์ทั้งหมด */
+  .cap-list,
+  .goal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-row {
+    grid-template-columns: 1fr;
+  }
+
+  .project-row .project-thumb {
+    min-height: 140px;
   }
 }
