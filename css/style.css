@@ -432,10 +432,15 @@ img {
 }
 
 .edu-icon {
-  font-size: 40px;
   background: var(--bg-gray);
   border-radius: 14px;
   padding: 10px 14px;
+}
+
+.edu-icon svg {
+  width: 38px;
+  height: 38px;
+  display: block;
 }
 
 .edu-card h3 {
@@ -464,6 +469,15 @@ img {
 .skills-grid h3 {
   font-size: 17px;
   margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skills-grid h3 svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 .projects-grid {
@@ -498,12 +512,21 @@ img {
   margin-bottom: 16px;
 }
 
-.project-thumb span {
-  font-size: 52px;
+.project-thumb svg {
+  width: 54px;
+  height: 54px;
   transition: transform 0.5s ease-out;
 }
 
-.project-card:hover .project-thumb span {
+.thumb-green svg {
+  color: #15803d;
+}
+
+.thumb-blue svg {
+  color: #1d4ed8;
+}
+
+.project-card:hover .project-thumb svg {
   transform: scale(1.12);
 }
 
@@ -556,8 +579,10 @@ img {
   transform: translateY(-3px);
 }
 
-.contact-icon {
-  font-size: 30px;
+.contact-icon svg {
+  width: 30px;
+  height: 30px;
+  display: block;
 }
 
 .contact-value {
@@ -616,7 +641,7 @@ img {
   .btn:hover,
   .project-card:hover,
   .photo-card:hover img,
-  .project-card:hover .project-thumb span {
+  .project-card:hover .project-thumb svg {
     transform: none;
   }
 }
