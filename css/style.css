@@ -1,0 +1,676 @@
+/* =====================================================
+   style.css — ธีมสีขาว สะอาด อ่านง่าย
+   โครงสร้าง:
+   1. ตัวแปร + รีเซ็ต
+   2. ปุ่ม / การ์ด / แท็ก (ใช้ซ้ำทั้งเว็บ)
+   3. Navbar
+   4. Hero
+   5. Section ทั่วไป
+   6. Skills / Projects / Contact
+   7. Footer
+   8. Responsive (มือถือ)
+   ===================================================== */
+
+/* ---------- 1. ตัวแปร + รีเซ็ต ---------- */
+:root {
+  --white: #ffffff;
+  --bg: #ffffff;
+  --bg-gray: #f7f7f8;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --border: #e8e8e8;
+  --dark: #111111;
+  --green: #16a34a;
+  --green-bg: #e8f7ee;
+  --blue: #2563eb;
+  --blue-bg: #e8effd;
+  --radius: 16px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Sarabun", "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- 2. ของใช้ซ้ำ: ปุ่ม / การ์ด / แท็ก ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  border: 1.5px solid var(--dark);
+  /* hover ขยายเล็กน้อย / กดยุบเล็กน้อย — นุ่มด้วย ease-out */
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, background-color 0.25s ease-out, color 0.25s ease-out;
+  will-change: transform;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-dark {
+  background: var(--dark);
+  color: #fff;
+}
+
+.btn-dark:hover {
+  box-shadow: var(--shadow);
+}
+
+.btn-outline {
+  background: #fff;
+  color: var(--dark);
+}
+
+.btn-outline:hover {
+  background: var(--dark);
+  color: #fff;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.pill {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #f0f0f0;
+  color: #333;
+}
+
+.pill-green {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.pill-blue {
+  background: var(--blue-bg);
+  color: var(--blue);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tags span {
+  font-size: 13.5px;
+  background: var(--bg-gray);
+  border: 1px solid var(--border);
+  padding: 5px 13px;
+  border-radius: 999px;
+}
+
+.tags.small span {
+  font-size: 12.5px;
+  padding: 4px 11px;
+}
+
+/* ---------- 3. Navbar ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  /* พื้นหลัง navbar เปลี่ยนอย่างนุ่มนวลตอน scroll */
+  transition: background-color 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+/* สถานะตอน scroll ลงมาแล้ว (ถูกสลับโดย JS) */
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom-color: var(--border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--green);
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+}
+
+.nav-link {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--muted);
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--dark);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-right .btn {
+  padding: 9px 20px;
+  font-size: 14px;
+}
+
+/* ปุ่มแฮมเบอร์เกอร์ (แสดงเฉพาะมือถือ) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2.5px;
+  background: var(--dark);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ---------- 4. Hero ---------- */
+.hero {
+  padding: 80px 0 70px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--bg-gray);
+  border: 1px solid var(--border);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.hero-text h1 {
+  font-size: 46px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.thai-name {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 34px;
+}
+
+.role {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 14px 0 10px;
+}
+
+.role span {
+  color: var(--green);
+  margin: 0 4px;
+}
+
+.desc {
+  color: var(--muted);
+  font-size: 16.5px;
+  max-width: 540px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-links {
+  display: flex;
+  gap: 18px;
+  margin-top: 18px;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.hero-links a {
+  border-bottom: 2px solid var(--dark);
+}
+
+/* รูปโปรไฟล์ */
+.hero-photo {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.photo-card {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  aspect-ratio: 1 / 1;
+  background: var(--bg-gray);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* รูปโปรไฟล์ขยับนุ่มๆ ตอน hover */
+  transition: transform 0.5s ease-out;
+}
+
+.photo-card:hover img {
+  transform: scale(1.03);
+}
+
+.photo-fallback {
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #f0f0f0, #e2e2e2);
+}
+
+.photo-fallback span {
+  font-size: 72px;
+  font-weight: 800;
+  color: #bbb;
+}
+
+.photo-fallback small {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.mini-card {
+  background: var(--dark);
+  color: #fff;
+  border-radius: 14px;
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-card strong {
+  font-size: 20px;
+}
+
+.mini-card span {
+  font-size: 13.5px;
+  opacity: 0.75;
+}
+
+/* ---------- 5. Section ทั่วไป ---------- */
+.section {
+  padding: 70px 0;
+}
+
+.section-gray {
+  background: var(--bg-gray);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-tag {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-size: 30px;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.section-sub {
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+/* เกี่ยวกับ + สถิติ */
+.about-stats {
+  display: flex;
+  gap: 28px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat strong {
+  font-size: 26px;
+}
+
+.stat span {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+/* การศึกษา */
+.edu-card {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.edu-icon {
+  font-size: 40px;
+  background: var(--bg-gray);
+  border-radius: 14px;
+  padding: 10px 14px;
+}
+
+.edu-card h3 {
+  font-size: 19px;
+  margin-bottom: 4px;
+}
+
+.edu-card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.edu-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* ---------- 6. Skills / Projects / Contact ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.skills-grid h3 {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+}
+
+.project-card {
+  /* hover ยกขึ้นเล็กน้อย + เงานุ่ม — transition อยู่ตรงนี้ */
+  transition: transform 0.35s ease-out, box-shadow 0.35s ease-out;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  font-size: 19px;
+  margin: 12px 0 8px;
+}
+
+/* ภาพปกการ์ด: ตัวใน scale ขึ้นเล็กน้อยตอน hover */
+.project-thumb {
+  height: 130px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.project-thumb span {
+  font-size: 52px;
+  transition: transform 0.5s ease-out;
+}
+
+.project-card:hover .project-thumb span {
+  transform: scale(1.12);
+}
+
+.thumb-green {
+  background: linear-gradient(135deg, #e8f7ee, #d3eddb);
+}
+
+.thumb-blue {
+  background: linear-gradient(135deg, #e8effd, #d5e2fa);
+}
+
+.project-card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-weight: 700;
+  font-size: 14.5px;
+  border-bottom: 2px solid var(--dark);
+}
+
+.project-link:hover {
+  color: var(--green);
+  border-color: var(--green);
+}
+
+/* เป้าหมาย */
+.goal-card p {
+  font-size: 17px;
+}
+
+/* ติดต่อ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: transform 0.15s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+}
+
+.contact-icon {
+  font-size: 30px;
+}
+
+.contact-value {
+  color: var(--muted);
+  font-size: 14.5px;
+  word-break: break-all;
+}
+
+/* ---------- 7. Footer ---------- */
+.footer {
+  padding: 26px 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.to-top {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid var(--dark);
+  background: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+}
+
+.to-top.show {
+  display: block;
+}
+
+.to-top:hover {
+  background: var(--dark);
+  color: #fff;
+}
+
+/* ---------- 9. รองรับผู้ใช้ที่ปิด animation ในระบบ ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .btn:hover,
+  .project-card:hover,
+  .photo-card:hover img,
+  .project-card:hover .project-thumb span {
+    transform: none;
+  }
+}
+
+/* ---------- 8. Responsive (มือถือ) ---------- */
+@media (max-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h1 {
+    font-size: 34px;
+  }
+
+  .thai-name {
+    font-size: 26px;
+  }
+
+  .hero-photo {
+    max-width: 340px;
+  }
+
+  /* เมนูมือถือแบบ dropdown */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 12px 20px 20px;
+    border-bottom: 1px solid var(--border);
+    gap: 4px;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 10px 4px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .nav-right .btn {
+    display: none;
+  }
+
+  .section {
+    padding: 50px 0;
+  }
+}

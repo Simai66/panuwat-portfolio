@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio — Panuwat Woeiram | Frontend Developer / Web Developer / IoT Developer" />
+  <title>Panuwat Woeiram | Portfolio</title>
+
+  <!-- ฟอนต์อ่านง่าย: Sarabun (ไทย) + Inter (อังกฤษ) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ไฟล์ CSS หลัก -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= Navbar ================= -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">PW<span>.</span></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">หน้าแรก</a>
+        <a href="#about" class="nav-link">เกี่ยวกับ</a>
+        <a href="#education" class="nav-link">การศึกษา</a>
+        <a href="#skills" class="nav-link">ทักษะ</a>
+        <a href="#projects" class="nav-link">ผลงาน</a>
+        <a href="#goal" class="nav-link">เป้าหมาย</a>
+        <a href="#contact" class="nav-link">ติดต่อ</a>
+      </nav>
+
+      <div class="nav-right">
+        <a href="#contact" class="btn btn-dark">จ้างงาน / ติดต่อ</a>
+        <!-- ปุ่มเมนูมือถือ -->
+        <button class="hamburger" id="hamburger" aria-label="เปิดเมนู">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Hero / หน้าแรก ================= -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+
+      <!-- ข้อความแนะนำตัว -->
+      <div class="hero-text">
+        <p class="badge">👋 สวัสดีครับ ผมคือ</p>
+        <h1>Panuwat Woeiram<br /><span class="thai-name">ภาณุวัฒน์ เวยรัมย์</span></h1>
+        <h2 class="role">Frontend Developer <span>/</span> Web Developer <span>/</span> IoT Developer</h2>
+        <p class="desc">
+          นักศึกษาวิทยาการคอมพิวเตอร์ ชั้นปีที่ 4 สนใจการพัฒนาเว็บและระบบ IoT
+          มีประสบการณ์ทำโปรเจกต์ด้วย React, Next.js, TypeScript, Tailwind CSS,
+          Supabase และ ESP32 รวมถึงการนำระบบขึ้นใช้งานจริง
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-dark">ดูผลงานของผม</a>
+          <a href="mailto:panuwat.woeiram@gmail.com" class="btn btn-outline">ส่งอีเมลหาเลย</a>
+        </div>
+
+        <div class="hero-links">
+          <a href="https://github.com/Simai66" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://panuwat-portfolio.web.app/en" target="_blank" rel="noopener">Portfolio ↗</a>
+        </div>
+      </div>
+
+      <!-- รูปโปรไฟล์ -->
+      <div class="hero-photo">
+        <div class="photo-card">
+          <!-- ใส่ไฟล์รูปของคุณที่ assets/profile.jpg -->
+          <img src="assets/profile.jpg" alt="รูปโปรไฟล์ Panuwat Woeiram" onerror="this.style.display='none';document.getElementById('photoFallback').style.display='flex';" />
+          <div class="photo-fallback" id="photoFallback">
+            <span>PW</span>
+            <small>ใส่รูปที่ assets/profile.jpg</small>
+          </div>
+        </div>
+
+        <div class="mini-card">
+          <strong>GPAX 3.52</strong>
+          <span>วิทยาการคอมพิวเตอร์ฯ ปี 4</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= เกี่ยวกับฉัน ================= -->
+  <section class="section" id="about">
+    <div class="container">
+      <p class="section-tag">About Me</p>
+      <h2 class="section-title">เกี่ยวกับฉัน</h2>
+
+      <div class="card">
+        <p>
+          ผมชื่อ <strong>ภาณุวัฒน์ เวยรัมย์ (Panuwat Woeiram)</strong>
+          กำลังศึกษาอยู่ชั้นปีที่ 4 สาขาวิทยาการคอมพิวเตอร์และนวัตกรรมข้อมูล
+          มหาวิทยาลัยราชภัฏสวนสุนันทา ชอบสร้างเว็บที่ใช้งานง่าย
+          และระบบ IoT ที่แก้ปัญหาได้จริง ตั้งแต่เขียนโค้ด ต่อเซนเซอร์
+          เชื่อมฐานข้อมูล จน deploy ขึ้นใช้งานจริง
+        </p>
+        <div class="about-stats">
+          <div class="stat"><strong>4+</strong><span>โปรเจกต์ที่ทำจริง</span></div>
+          <div class="stat"><strong>3.52</strong><span>GPAX</span></div>
+          <div class="stat"><strong>Web + IoT</strong><span>สายงานที่ถนัด</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= การศึกษา ================= -->
+  <section class="section section-gray" id="education">
+    <div class="container">
+      <p class="section-tag">Education</p>
+      <h2 class="section-title">การศึกษา</h2>
+
+      <div class="card edu-card">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <h3>มหาวิทยาลัยราชภัฏสวนสุนันทา</h3>
+          <p>สาขาวิทยาการคอมพิวเตอร์และนวัตกรรมข้อมูล</p>
+          <div class="edu-meta">
+            <span class="pill">ชั้นปีที่ 4</span>
+            <span class="pill pill-green">GPAX 3.52</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ทักษะ ================= -->
+  <section class="section" id="skills">
+    <div class="container">
+      <p class="section-tag">Skills</p>
+      <h2 class="section-title">ทักษะของผม</h2>
+
+      <div class="skills-grid">
+        <div class="card">
+          <h3>🎨 Frontend</h3>
+          <div class="tags">
+            <span>React</span><span>Next.js</span><span>TypeScript</span>
+            <span>JavaScript</span><span>Vite</span><span>Tailwind CSS</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🗄️ Backend / Database</h3>
+          <div class="tags">
+            <span>Supabase</span><span>PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>📡 IoT</h3>
+          <div class="tags">
+            <span>ESP32</span><span>ESP8266</span><span>Raspberry Pi</span>
+            <span>MQTT</span><span>ESP-NOW</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🤖 AI / ML</h3>
+          <div class="tags">
+            <span>Python</span><span>OpenCV</span><span>TensorFlow</span><span>TFLite</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🛠️ Tools</h3>
+          <div class="tags">
+            <span>Git</span><span>GitHub</span><span>Vercel</span>
+            <span>Node-RED</span><span>Mosquitto</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ผลงาน ================= -->
+  <section class="section section-gray" id="projects">
+    <div class="container">
+      <p class="section-tag">Projects</p>
+      <h2 class="section-title">ตัวอย่างผลงาน</h2>
+      <p class="section-sub">โปรเจกต์ที่เคยทำจริง ทั้งเว็บแอป + IoT + AI</p>
+
+      <div class="projects-grid">
+
+        <!-- โปรเจกต์ 1 -->
+        <article class="card project-card">
+          <div class="project-thumb thumb-green"><span>🌱</span></div>
+          <span class="pill pill-green">AI + IoT</span>
+          <h3>🌱 Smart Greenhouse</h3>
+          <p>ระบบโรงเรือนอัจฉริยะสำหรับตรวจสอบสุขภาพพืชด้วย AI และ Image Processing เชื่อมต่อกล้อง เซนเซอร์ ระบบควบคุม และ Dashboard</p>
+          <div class="tags small">
+            <span>AI</span><span>Image Processing</span><span>ESP32</span><span>Dashboard</span>
+          </div>
+        </article>
+
+        <!-- โปรเจกต์ 2 -->
+        <article class="card project-card">
+          <div class="project-thumb thumb-blue"><span>💰</span></div>
+          <span class="pill pill-blue">Web App</span>
+          <h3>💰 KhuenKan — Friend Debt Tracker</h3>
+          <p>เว็บแอปสำหรับบันทึกหนี้และแชร์ค่าใช้จ่ายระหว่างเพื่อน พัฒนาด้วย Next.js, TypeScript, Tailwind CSS และ Supabase</p>
+          <div class="tags small">
+            <span>Next.js</span><span>TypeScript</span><span>Tailwind</span><span>Supabase</span>
+          </div>
+          <a class="project-link" href="https://github.com/Simai66/KhuenKan" target="_blank" rel="noopener">ดูโค้ดใน GitHub ↗</a>
+        </article>
+
+        <!-- โปรเจกต์ 3 -->
+        <article class="card project-card">
+          <div class="project-thumb thumb-green"><span>🍄</span></div>
+          <span class="pill pill-green">IoT + Web</span>
+          <h3>🍄 MushCycle Smart</h3>
+          <p>ระบบติดตามโครงการย่อยสลาย PLA ด้วยวัสดุเหลือใช้จากการเพาะเห็ด พร้อม Dashboard และฐานข้อมูล</p>
+          <div class="tags small">
+            <span>Next.js</span><span>Supabase</span><span>IoT</span>
+          </div>
+          <a class="project-link" href="https://github.com/Simai66/MushCycle-Smart-dashboard" target="_blank" rel="noopener">ดูโค้ดใน GitHub ↗</a>
+        </article>
+
+        <!-- โปรเจกต์ 4 -->
+        <article class="card project-card">
+          <div class="project-thumb thumb-blue"><span>💧</span></div>
+          <span class="pill pill-blue">ML + IoT</span>
+          <h3>💧 Microplastic Filter + ML</h3>
+          <p>ระบบทดลองกรองไมโครพลาสติกและแนะนำปริมาณสารตกตะกอนด้วย Machine Learning เชื่อมต่อ ESP32, Raspberry Pi, MQTT และ Node-RED</p>
+          <div class="tags small">
+            <span>ESP32</span><span>Raspberry Pi</span><span>MQTT</span><span>Node-RED</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= เป้าหมาย ================= -->
+  <section class="section" id="goal">
+    <div class="container">
+      <p class="section-tag">Career Goal</p>
+      <h2 class="section-title">เป้าหมายของผม</h2>
+
+      <div class="card goal-card">
+        <p>
+          สนใจงานด้าน <strong>Frontend Development, Web Development,
+          Software Development</strong> และ <strong>IoT</strong>
+          รวมถึงงานที่ได้ใช้ทั้งทักษะด้านเทคนิค การวางแผน
+          และการทำงานร่วมกับทีม
+        </p>
+        <div class="tags">
+          <span>Frontend Developer</span>
+          <span>Web Developer</span>
+          <span>Software Developer</span>
+          <span>IoT Developer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ติดต่อ ================= -->
+  <section class="section section-gray" id="contact">
+    <div class="container">
+      <p class="section-tag">Contact</p>
+      <h2 class="section-title">ติดต่องาน</h2>
+      <p class="section-sub">พร้อมเริ่มงาน / ฝึกงาน / ฟรีแลนซ์ — ตอบไวครับ ✉️</p>
+
+      <div class="contact-grid">
+        <a class="card contact-card" href="mailto:panuwat.woeiram@gmail.com">
+          <span class="contact-icon">📧</span>
+          <strong>อีเมล</strong>
+          <span class="contact-value">panuwat.woeiram@gmail.com</span>
+        </a>
+        <a class="card contact-card" href="https://github.com/Simai66" target="_blank" rel="noopener">
+          <span class="contact-icon">💻</span>
+          <strong>GitHub</strong>
+          <span class="contact-value">github.com/Simai66</span>
+        </a>
+        <a class="card contact-card" href="https://panuwat-portfolio.web.app/en" target="_blank" rel="noopener">
+          <span class="contact-icon">🌐</span>
+          <strong>Portfolio (เก่า)</strong>
+          <span class="contact-value">panuwat-portfolio.web.app</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Footer ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Panuwat Woeiram</p>
+      <button class="to-top" id="toTop" aria-label="กลับขึ้นด้านบน">↑</button>
+    </div>
+  </footer>
+
+  <!-- Motion (ไลบรารี animation ตัวเดียวกับทีม Framer Motion รุ่น vanilla JS) -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
+  <!-- ไฟล์ JS หลัก -->
+  <script src="js/main.js"></script>
+</body>
+</html>
